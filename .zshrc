@@ -88,3 +88,4 @@ PATH=$HOME/.rvm/bin:$PATH # Add RVM to PATH for scripting
 setopt AUTO_CD
 alias tmux="TERM=screen-256color-bce tmux"
 compctl -g '~/.teamocil/*(:t:r)' teamocil
+stty -ixon
