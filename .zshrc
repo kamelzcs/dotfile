@@ -54,7 +54,7 @@ source $ZSH/oh-my-zsh.sh
 # User configuration
 export JAVA_HOME="/usr/lib/jvm/java-6-openjdk-amd64"
 export ANDROID_HOME="/opt/android-sdk-linux"
-export PATH="/usr/lib/jvm/java-6-openjdk-amd64/bin:/opt/android-sdk-linux/tools:/opt/android-sdk-linux/platform-tools:/home/kamel/.cabal/bin:/home/kamel/Library/google_appengine:/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
+export PATH="$PATH:/usr/lib/jvm/java-6-openjdk-amd64/bin:/opt/android-sdk-linux/tools:/opt/android-sdk-linux/platform-tools:/home/kamel/.cabal/bin:/home/kamel/Library/google_appengine:/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
 export PYTHONPATH="/home/kamel/Library/google_appengine/:/home/kamel/Library/google_appengine/lib/:/home/kamel/Library/google_appengine/lib/yaml/:${PYTHONPATH}"
 export GO_INSTALL_DIR="$HOME/Library/go/bin"
 export PATH="$GO_INSTALL_DIR:$PATH"
@@ -84,6 +84,7 @@ eval `dircolors ~/.dircolors`
 
 
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+PATH=$HOME/.rvm/bin:$PATH # Add RVM to PATH for scripting
 setopt AUTO_CD
 alias tmux="TERM=screen-256color-bce tmux"
+compctl -g '~/.teamocil/*(:t:r)' teamocil
