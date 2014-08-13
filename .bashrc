@@ -135,3 +135,4 @@ PATH=$HOME/.rvm/bin:$PATH # Add RVM to PATH for scripting
 set -o vi
 complete -W "$(teamocil --list)" teamocil
 stty -ixon
+alias copy='xclip -sel clip'

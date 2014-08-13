@@ -47,7 +47,7 @@ ZSH_THEME="agnoster"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git autojump Completion last-working-dir screen)
+plugins=(git autojump Completion last-working-dir screen tmux)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -89,3 +89,4 @@ setopt AUTO_CD
 alias tmux="TERM=screen-256color-bce tmux"
 compctl -g '~/.teamocil/*(:t:r)' teamocil
 stty -ixon
+alias copy='xclip -sel clip'
