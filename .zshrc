@@ -87,7 +87,6 @@ eval `dircolors ~/.dircolors`
 PATH=$HOME/.rvm/bin:$PATH # Add RVM to PATH for scripting
 setopt AUTO_CD
 alias tmux="TERM=screen-256color-bce tmux"
-compctl -g '~/.teamocil/*(:t:r)' teamocil
 fpath=(~/dotConf/zsh-completions/src $fpath)
 stty -ixon
 alias copy='xclip -sel clip'
