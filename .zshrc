@@ -57,6 +57,7 @@ export ANDROID_HOME="/opt/android-sdk-linux"
 export PATH="$PATH:/usr/lib/jvm/java-6-openjdk-amd64/bin:/opt/android-sdk-linux/tools:/opt/android-sdk-linux/platform-tools:/home/kamel/.cabal/bin:/home/kamel/Library/google_appengine:/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
 export PYTHONPATH="/home/kamel/Library/google_appengine/:/home/kamel/Library/google_appengine/lib/:/home/kamel/Library/google_appengine/lib/yaml/:${PYTHONPATH}"
 export GO_INSTALL_DIR="$HOME/Library/go/bin"
+export WORKON_HOME="/home/kamel/Envs"
 export PATH="$GO_INSTALL_DIR:$PATH"
 
 #export PYTHONPATH="/usr/local/lib/python2.7/dist-packages/tornado-3.2-py2.7-linux-x86_64.egg/tornado:${PYTHONPATH}"
@@ -78,6 +79,7 @@ DEFAULT_USER=`whoami`
 setopt interactivecomments
 
 #source /home/kamel/.vim/bundle/powerline/powerline/bindings/zsh/powerline.zsh
+source /usr/local/bin/virtualenvwrapper.sh
 
 eval `dircolors ~/.dircolors`
 #bindkey -v
