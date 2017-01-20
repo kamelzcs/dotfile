@@ -92,4 +92,5 @@ setopt AUTO_CD
 alias tmux="TERM=screen-256color-bce tmux"
 fpath=(~/dotConf/zsh-completions/src $fpath)
 stty -ixon
-alias copy='xclip -sel clip'
+alias setclip='xclip -selection c'
+alias getclip='xclip -selection clipboard -o'
