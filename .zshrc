@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh configuration.
-ZSH=$HOME/.oh-my-zsh
+export ZSH=/Users/zhaoshua/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -47,23 +47,15 @@ ZSH_THEME="agnoster"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git autojump Completion last-working-dir screen)
+plugins=(git autojump Completion last-working-dir screen vi-mode)
 
 source $ZSH/oh-my-zsh.sh
-
-# User configuration
-export JAVA_HOME="/usr/lib/jvm/java-7-openjdk"
-export ANDROID_HOME="/opt/android-sdk-linux"
-export PATH="$PATH:$JAVA_HOME/bin:/opt/android-sdk-linux/tools:/opt/android-sdk-linux/platform-tools:/home/kamel/.cabal/bin:/home/kamel/Library/google_appengine:/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
-export PYTHONPATH="/home/kamel/Library/google_appengine/:/home/kamel/Library/google_appengine/lib/:/home/kamel/Library/google_appengine/lib/yaml/:${PYTHONPATH}"
-export GO_INSTALL_DIR="$HOME/Library/go/bin"
-export WORKON_HOME="/home/kamel/Envs"
-export PATH="$GO_INSTALL_DIR:$PATH"
-export RESERVE="debug"
+source $HOME/Lib/create-gk-aliases.sh
 
 #export PYTHONPATH="/usr/local/lib/python2.7/dist-packages/tornado-3.2-py2.7-linux-x86_64.egg/tornado:${PYTHONPATH}"
 # export MANPATH="/usr/local/man:$MANPATH"
 
+#export PATH="$PATH:/Users/zhaoshua/Library/Python/3.5/bin"
 # # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
 #   export EDITOR='vim'
@@ -80,17 +72,38 @@ DEFAULT_USER=`whoami`
 setopt interactivecomments
 
 #source /home/kamel/.vim/bundle/powerline/powerline/bindings/zsh/powerline.zsh
-source /usr/local/bin/virtualenvwrapper.sh
 
-eval `dircolors ~/.dircolors`
+#eval `dircolors ~/.dircolors`
+
 #bindkey -v
 
 
 
-PATH=$HOME/.rvm/bin:$PATH # Add RVM to PATH for scripting
+export BRAZIL_AUTO_BACKUP=1
 setopt AUTO_CD
 alias tmux="TERM=screen-256color-bce tmux"
+alias vim='/usr/local/bin/vim'
+[[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
 fpath=(~/dotConf/zsh-completions/src $fpath)
 stty -ixon
 alias setclip='xclip -selection c'
 alias getclip='xclip -selection clipboard -o'
+alias bb=brazil-build
+alias bbc="brazil-build clean"
+alias brc=brazil-recursive-cmd
+alias bbb='brc --allPackages brazil-build'
+alias bbb="brazil-build clean"
+alias bbs="brazil-build server"
+alias odin="ssh -fNL 2009:127.0.0.1:2009 zhaoshua-pdx.aka.corp.amazon.com"
+alias ssho="ssh -o ProxyCommand=none"
+alias killNinja="kill -9 $(ps aux | grep 'ninja' | awk '{print $2}')"
+
+
+sshForward() {
+    ssh -o ProxyCommand=none -T -N -L $1\:localhost\:$2 dev-dsk-zhaoshua-2a-c863465a.us-west-2.amazon.com
+}
+
+alias forward=sshForward
+alias cr='cr --pull-request false'
+export PATH=$BRAZIL_CLI_BIN:$PATH
+export PATH=$HOME/.toolbox/bin:$PATH
