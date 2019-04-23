@@ -94,3 +94,4 @@ alias tmux="TERM=screen-256color-bce tmux"
 fpath=(~/dotConf/zsh-completions/src $fpath)
 stty -ixon
 alias copy='xclip -sel clip'
+source /home/kamel/anaconda3/etc/profile.d/conda.sh
