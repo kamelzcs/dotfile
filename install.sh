@@ -8,6 +8,7 @@
 
 # ln -s ~/dotfile/.bashrc ~/.bashrc
 ln -s ~/dotfile/.zshrc ~/.zshrc
+ln -s ~/dotfile/.p10kzsh ~/.p10kzsh
 # ln -s ~/dotfile/.fonts ~/.fonts
 ln -s ~/dotfile/.vimrc ~/.vimrc
 
